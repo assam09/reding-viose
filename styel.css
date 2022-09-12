@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400;1,900&family=Truculenta:opsz,wght@12..72,200;12..72,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Poppins', sans-serif;
+}
+.content{
+    min-height: 100vh;
+    background-color:#eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+background-color: inherit;
+box-shadow: 0 0 7px rgb(0 0 0 / 40%);
+padding: 50px 20px;
+min-height: 350px;
+width: 320px;
+border-radius: 6px;
+}
+.box h2 {
+color: #777;
+margin-bottom: 20px;
+font-size: 20px;
+text-align: center;
+}
+.box textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    box-shadow: 0 0 7px rgb(0 0 0 / 40%);
+    height: 100px;
+    padding: 10px;
+    border-radius: inherit;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #777;
+}
+.box .select {
+width: 100%;
+box-shadow: inherit;
+position: relative;
+margin-bottom: 20px;
+}
+.box select {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-weight: bold;
+    appearance: none;
+}
+.select::after {
+    content:"";
+    position: absolute;
+    border: 7px solid transparent;
+    border-top-color:#777 ;
+    top: 50%;
+    transform: translateY(-3.5px);
+    right: 10px;
+    pointer-events: none;
+}
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inherit;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+}
+.button::after,
+.button::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid #ff7708;
+    opacity: 0;
+}
+.button.active::after,
+.button.active::before
+{
+    animation: plead 2s ease-in-out infinite;
+}
+.button.active::before{
+    animation-delay: .2s;
+}
+@keyframes plead {
+    0%,75%{
+        width: 60px;
+        height: 60px;
+        opacity: .5;
+    }
+    50%,100%{
+        width: 50px;
+        height: 50px;
+        opacity: .2;
+    }
+}
